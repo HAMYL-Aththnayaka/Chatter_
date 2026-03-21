@@ -10,6 +10,14 @@ const login =()=>{
             <input type="text" placeholder='username'className="form-input" required />
             <input type="email" placeholder='email ' className="form-input" />
             <input type="password" placeholder='password' className="form-input" />
+            <buttom type='submit'>Sign UP</buttom>
+            <div className="login-term">
+                <input type='checkbox'/>
+                <p>Agree to the terms of use & privacy policy.</p>
+            </div>
+            <div classsName='login-forgot'>
+                <p classsName='login-togle'>Already have a Account <span>click Here</span></p>
+            </div>
         </form>
     </div>);
 }
