@@ -10,7 +10,7 @@ const login =()=>{
             <input type="text" placeholder='username'className="form-input" required />
             <input type="email" placeholder='email ' className="form-input" />
             <input type="password" placeholder='password' className="form-input" />
-            <buttom type='submit'>Sign UP</buttom>
+            <button type='submit'>Sign UP</button>
             <div className="login-term">
                 <input type='checkbox'/>
                 <p>Agree to the terms of use & privacy policy.</p>
