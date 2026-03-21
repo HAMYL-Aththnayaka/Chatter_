@@ -9,7 +9,9 @@ const login = () => {
             <img src={Assets.logo_big} alt='' className='logo' />
             <form action='' className='login-form'>
                 <h2>{currState}</h2>
-                <input type="text" placeholder='username' className="form-input" required />
+                {(currState == 'sign up')?
+                <input type="text" placeholder='username' className="form-input" required />:"" 
+                }
                 <input type="email" placeholder='email ' className="form-input" />
                 <input type="password" placeholder='password' className="form-input" />
                 <button type='submit'>Sign UP</button>
@@ -19,7 +21,7 @@ const login = () => {
                 </div>
 
                 <div className='login-forgot'>
-                    <p className='login-toggle'>Already have an Account <span onClick={()=>{setCurrState("Log in")}}>click Here</span></p>
+                    <p className='login-toggle'>{(currState == "sign up")?<p>Already have an Account</p>:<p>Dont Have a Account </p>} <span onClick={()=>{(currState == "sign up")?setCurrState("Log in"):setCurrState('sign up')}}>click Here</span></p>
                 </div>
             </form>
         </div>);
