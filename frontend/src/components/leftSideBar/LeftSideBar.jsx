@@ -1,9 +1,17 @@
 import React from 'react'
 import './LeftSideBar.css'
+import assets from "../../assets/assets"
+
 
 const LeftSideBar = () => {
   return (
-    <div>LeftSideBar</div>
+    <div className='ls'>
+      <div className="ls-top">
+        <div className="ls-nav">
+          <img src={assets.logo} alt="" className='logo' />
+        </div>
+      </div> 
+    </div>
   )
 }
 
