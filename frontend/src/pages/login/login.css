@@ -29,3 +29,12 @@
     border-radius:4px;
     outline-color:#077eff;
 }
+.login-form button{
+    padding:10px;
+    background-color:#077eff;
+    color:white;
+    font-size:16px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
