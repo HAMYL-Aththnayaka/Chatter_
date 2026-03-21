@@ -1,12 +1,14 @@
 import React from "react"
 import './login.css'
 import Assets from '../../assets/assets'
+import { useState } from "react";
 const login = () => {
+    const [currState,setCurrState]=useState("sign up");
     return (
         <div className='login'>
             <img src={Assets.logo_big} alt='' className='logo' />
             <form action='' className='login-form'>
-                <h2>Sign UP</h2>
+                <h2>{currState}</h2>
                 <input type="text" placeholder='username' className="form-input" required />
                 <input type="email" placeholder='email ' className="form-input" />
                 <input type="password" placeholder='password' className="form-input" />
@@ -17,7 +19,7 @@ const login = () => {
                 </div>
 
                 <div className='login-forgot'>
-                    <p className='login-toggle'>Already have an Account <span>click Here</span></p>
+                    <p className='login-toggle'>Already have an Account <span onClick={()=>{setCurrState("Log in")}}>click Here</span></p>
                 </div>
             </form>
         </div>);
