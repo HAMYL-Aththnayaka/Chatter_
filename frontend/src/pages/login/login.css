@@ -49,17 +49,17 @@
     flex-direction:column;
     gap:5px;
 }
-/* Change 'togle' to 'toggle' */
 .login-toggle {
     font-size: 13px;
     color: rgb(157, 105, 36);
+    text-align: center;
 }
 
 .login-toggle span {
     font-weight: 500;
     color: rgb(33, 24, 196);
     cursor: pointer;
-    margin-left:12px
+
 }
 .login-toggle span:hover {
     text-decoration: underline;
