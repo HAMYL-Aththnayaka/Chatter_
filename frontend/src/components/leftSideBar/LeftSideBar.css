@@ -52,3 +52,10 @@
     aspect-ratio:1/1;
     border-radius:50%;
 }
+.friends{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 20px;
+    font-size:14px;
+}
