@@ -28,3 +28,13 @@
     padding:10px 20px;
     margin-top:20px;
 }
+.ls-search img{
+    width:16px;
+}
+.ls-search input{
+    background:transparent;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:11px;
+}
