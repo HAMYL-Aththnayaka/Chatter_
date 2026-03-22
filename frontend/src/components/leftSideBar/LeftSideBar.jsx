@@ -18,7 +18,7 @@ const LeftSideBar = () => {
               <input type='text' placeholder='search ....'/>
           </div>
       </div>
-       <div className="list">
+       <div className="ls-list">
         <div className="friends">
           <img src={assets.profile_img} alt='' />
           <div>

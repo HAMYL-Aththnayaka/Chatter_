@@ -38,3 +38,12 @@
     color:white;
     font-size:11px;
 }
+.ls-search input::placeholder{
+    color:aliceblue;
+}
+.ls-list{
+    display:flex;
+    flex-direction:column;
+    height:70%;
+    overflow-y:scroll;
+}
