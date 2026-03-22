@@ -3,6 +3,8 @@
     background:linear-gradient(#38a8e0,#70b9d8);
     display:flex;
     place-items:center;
+    justify-content: center;
+    align-items: center;
 }
 .chat-container{
     width:95%;

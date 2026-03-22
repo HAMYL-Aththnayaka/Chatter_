@@ -8,16 +8,25 @@ const LeftSideBar = () => {
     <div className='ls'>
       <div className="ls-top">
         <div className="ls-nav">
-          <img src={assets.logo} alt="" className='logo' />
+            <img src={assets.logo} alt="" className='logo' />
             <div className="menu">
               <img src={assets.menu_icon} alt='' />
             </div>
-            <div className="ls-search">
+        </div>
+          <div className="ls-search">
               <img src={assets.search_icon} alt=''/>
               <input type='text' placeholder='search ....'/>
-            </div>
+          </div>
+      </div>
+       <div className="list">
+        <div className="friends">
+          <img src={assets.profile_img} alt='' />
+          <div>
+            <p>Yasas Lasitha</p>
+            <span>Hello , Whats Up</span>
+          </div>
         </div>
-      </div> 
+       </div>
     </div>
   )
 }
