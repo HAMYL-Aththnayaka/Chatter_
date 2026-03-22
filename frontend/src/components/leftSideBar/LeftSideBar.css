@@ -1,5 +1,5 @@
 .ls{
-    background:#091a3c;
+    background:#2b0c34;
     color:white;
     height:75vh;
 }
@@ -58,4 +58,8 @@
     gap:10px;
     padding:10px 20px;
     font-size:14px;
+}
+.friends div{
+    display:flex;
+    flex-direction:column;
 }
