@@ -1,0 +1,30 @@
+.ls{
+    background:#091a3c;
+    color:white;
+    height:75vh;
+}
+.ls-top{
+    padding:20px;
+}
+.ls-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.ls-nav .logo{
+    max-width:150px;
+}
+
+.ls-nav .menu img{
+    max-height:20px;
+    opacity:0.6;
+    cursor:pointer;
+}
+.ls-search{
+    background-color:#0a2e77;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:10px 20px;
+    margin-top:20px;
+}
