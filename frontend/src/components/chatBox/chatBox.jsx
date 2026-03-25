@@ -5,53 +5,62 @@ import assets from '../../assets/assets'
 const ChatBox = () => {
   return (
     <div className="chat-box">
-      {/* User Header */}
+
+      {/* Header */}
       <div className="chat-user">
-        <img src={assets.profile_img} alt="profile" />
-        <p>Yasas Aththanayaka <img src={assets.green_dot} alt="" className='dot' /></p>
-        <img src={assets.help_icon} alt="help" />
+        <img className="profile-pic" src={assets.profile_img} alt="profile" />
+        <p>
+          Yasas Aththanayaka 
+          <img src={assets.green_dot} alt="" style={{ width: '10px', marginLeft: '5px' }} />
+        </p>
+        <img src={assets.help_icon} alt="help" style={{ width: '20px', marginLeft: 'auto' }} />
       </div>
 
-      {/* Message Area */}
+      {/* Messages */}
       <div className="chat-msg">
-        
-        {/* Sent Text Message */}
+
+        {/* Sent Text */}
         <div className="s-msg">
-          <img src={assets.profile_img} alt='sender-pp' />
+          <img className="profile-pic" src={assets.profile_img} alt='' />
           <div>
             <p className="msg">The Typed Message for display</p>
             <p className="time">2:30</p>
           </div>
         </div>
 
-        {/* Sent IMAGE Message (The image you sent) */}
+        {/* Sent Image */}
         <div className="s-msg">
-          <img src={assets.profile_img} alt='sender-pp' />
+          <img className="profile-pic" src={assets.profile_img} alt='' />
           <div>
-            <img className='msg-image' src={assets.pic1} alt='sent-pic' />
+            <img className='msg-image' src={assets.pic1} alt='' />
             <p className="time">2:30</p>
           </div>
         </div>
 
-        {/* Received Text Message */}
+        {/* Received Text */}
         <div className="r-msg">
-          <img src={assets.profile_img} alt='receiver-pp' />
+          <img className="profile-pic" src={assets.profile_img} alt='' />
           <div>
             <p className="msg">The Typed Message for display</p>
             <p className="time">2:30</p>
           </div>
         </div>
+
       </div>
 
-      {/* Input Area */}
+      {/* Input */}
       <div className="chat-input">
         <input type="text" placeholder="send a message" />
-        <input type="file" id='image' accept='image/png,image/jpeg' hidden />
+
         <label htmlFor='image'>
-          <img src={assets.gallery_icon} alt='gallery' />
+          <img src={assets.gallery_icon} alt='' />
         </label>
-        <img src={assets.send_button} alt='send' />
+
+        <input type="file" id='image' hidden />
+
+        <img src={assets.send_button} alt='' />
       </div>
+
     </div>
   )
 }

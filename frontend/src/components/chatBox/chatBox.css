@@ -1,11 +1,13 @@
+/* Container */
 .chat-box {
     height: 75vh;
     position: relative;
-    background-color: rgb(239, 238, 237);
+    background-color: #efeeed;
     display: flex;
     flex-direction: column;
 }
 
+/* Header */
 .chat-user {
     padding: 10px 15px;
     display: flex;
@@ -15,100 +17,95 @@
     background: white;
 }
 
-.chat-user img {
+.profile-pic {
     width: 38px;
-    aspect-ratio: 1/1;
+    height: 38px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.chat-user p {
-    flex: 1;
-    font-weight: 500;
-    font-size: 20px;
-    color: #393939;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
+/* Messages area */
 .chat-msg {
     flex: 1;
     padding: 20px;
-    padding-bottom: 80px; 
-    overflow-y: scroll;
+    padding-bottom: 90px;
+    overflow-y: auto;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 25px;
 }
 
-/* --- ALIGNMENT LOGIC --- */
-
+/* Common message */
 .s-msg, .r-msg {
     display: flex;
     align-items: flex-end;
     gap: 10px;
+    max-width: 80%;
 }
 
-/* Receiver: PP Left, Content Right */
-.r-msg {
-    flex-direction: row;
-    align-self: flex-start;
-}
-
-/* Sender: PP Right, Content Left */
-.s-msg {
-    flex-direction: row-reverse;
-    align-self: flex-end;
-}
-
-/* Internal grouping for Text/Image + Time */
 .s-msg div, .r-msg div {
     display: flex;
     flex-direction: column;
 }
 
-.s-msg div { align-items: flex-end; }
-.r-msg div { align-items: flex-start; }
-
-.s-msg img, .r-msg img {
-    width: 27px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
+/* Sent (Right side) */
+.s-msg {
+    flex-direction: row-reverse;
+    align-self: flex-end;
 }
 
-/* --- BUBBLE & IMAGE STYLES --- */
-
-.msg {
-    padding: 10px 15px;
-    max-width: 250px;
-    font-size: 14px;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.r-msg .msg {
-    background-color: #7b7f84; /* Grey for receiver */
-    border-radius: 10px 10px 10px 0;
+.s-msg div {
+    align-items: flex-end;
 }
 
 .s-msg .msg {
-    background-color: #114dcc; /* Blue for sender */
-    border-radius: 10px 10px 0 10px; 
+    background-color: #114dcc;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px 12px 0 12px;
+    font-size: 14px;
 }
 
+/* Received (Left side) */
+.r-msg {
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.r-msg div {
+    align-items: flex-start;
+}
+
+.r-msg .msg {
+    background-color: #7b7f84;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px 12px 12px 0;
+    font-size: 14px;
+}
+
+/* Profile pic inside messages */
+.s-msg .profile-pic,
+.r-msg .profile-pic {
+    width: 27px;
+    height: 27px;
+}
+
+/* Image message */
 .msg-image {
     max-width: 230px;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
+/* Time */
 .time {
     font-size: 10px;
     color: #888;
+    margin-top: 5px;
 }
 
-/* --- INPUT SECTION --- */
-
+/* Input */
 .chat-input {
     display: flex;
     align-items: center;
