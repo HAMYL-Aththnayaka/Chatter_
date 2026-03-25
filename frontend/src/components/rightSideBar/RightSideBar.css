@@ -39,7 +39,7 @@
     font-size:13px;
 }
 .rs-media div{
-    max-height:180px;
+    max-height:110px;
     overflow-y:scroll;
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
@@ -47,5 +47,25 @@
     margin-top:8px;
 }
 .rs-media div img{
-    wif
+    width:60px;
+    border-radius:4px;
+    cursor:pointer;
+}
+.rs {
+    position: relative; 
+}
+
+.rs button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(96, 167, 228);
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px 65px;
+    border-radius: 20px;
+    cursor: pointer;
 }
