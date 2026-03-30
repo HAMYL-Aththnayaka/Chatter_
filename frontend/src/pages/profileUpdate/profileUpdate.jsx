@@ -4,7 +4,7 @@ import assets from "../../assets/assets"
 
 const profileUpdate = () => {
   return (
-    <div className-='profile'>
+    <div className='profile'>
         <div className='profile-container'>
               <form>
                 <h3>Profile Details</h3>
