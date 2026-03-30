@@ -17,7 +17,7 @@ const profileUpdate = () => {
                 <textarea placeholder='Write Profile Bio'required></textarea>
                 <button type='submit'>Save</button>
               </form>
-              <img src={assets.logo_icon}/>
+              <img className='pro-pic' src={assets.logo_icon}/>
         </div>
       </div>
   )
