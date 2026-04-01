@@ -29,18 +29,26 @@ const Login = () => {
                 {(currState == 'sign up') ?
                     <input onChange={(e)=>{setUserName(e.target.value)}} value={userName} type="text" placeholder='username' className="form-input" required /> : ""
                 }
-                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" placeholder='email ' className="form-input" />
-                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder='password' className="form-input" />
+                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" placeholder='email ' className="form-input" required/>
+                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder='password' className="form-input" required />
                 {currState == "sign up" ?
                     <button type='submit'>Sign UP</button> : <button type='submit'>Log in</button>
                 }
                 <div className="login-term">
-                    <input type='checkbox' />
+                    <input type='checkbox' required />
                     <p>Agree to the terms of use & privacy policy.</p>
                 </div>
 
                 <div className='login-forgot'>
-                    <p className='login-toggle'>{(currState == "sign up") ? <p>Already have an Account</p> : <p>Dont Have a Account </p>} <span onClick={() => { (currState == "sign up") ? setCurrState("Log in") : setCurrState('sign up') }}>click Here</span></p>
+                    {currState === "Sign Up" ? (
+                        <p className='login-toggle'>
+                            Already have an account? <span onClick={() => setCurrState("Login")}>Login here</span>
+                        </p>
+                    ) : (
+                        <p className='login-toggle'>
+                            Don't have an account? <span onClick={() => setCurrState("Sign Up")}>Click here</span>
+                        </p>
+                    )}
                 </div>
             </form>
         </div>);

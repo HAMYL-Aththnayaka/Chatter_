@@ -8,16 +8,20 @@ import Chat from './pages/chat/chat';
 import ProfileUpdate from './pages/profileUpdate/profileUpdate';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebase';
+import { useContext } from 'react';
+import { AppContext } from './context/appContext';
 
 
 
 const App=()=>{
   const navigate = useNavigate();
+  const { loadUserData } = useContext(AppContext); 
+
   useEffect(()=>{
-    onAuthStateChanged(auth,(user)=>{
+    onAuthStateChanged(auth,async (user)=>{
       if(user){
         navigate("/chat");
-        console.log("User is logged in:", user);
+        await loadUserData(user.uid);
       }else{
         console.log("No user is logged in.");
         navigate("/");
