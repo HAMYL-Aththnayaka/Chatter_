@@ -4,6 +4,8 @@ import assets from "../../assets/assets"
 
 const profileUpdate = () => {
   const [image,setImage] = useState(false);
+  const [name,setName] = useState("");
+  const [bio,setBio] = useState("");
   return (
     <div className='profile'>
         <div className='profile-container'>
