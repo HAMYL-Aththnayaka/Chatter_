@@ -6,16 +6,23 @@ export const AppContext = createContext();
 const AppContextProvider = ( props ) => {
     const [userData,setUserData]=useState(null);
     const [chatData,setChatData]=useState(null);
-    
+    const navigate = useNavigate();
+
+
     const loadUserData=async(uid)=>{
        try {
         const userRef =doc(db,"users",uid);
         const userSnap = await getDoc(userRef);
-        console.log("User data fetched successfully:", userSnap.data());
-       }    catch (error) {
+        const userData = userSnap.data();
+        //console.log("User data fetched successfully:", userData);
+        setUserData(userData);
+        if(userData.avatar && userData.name){
+            navigate("/chat");
+        }
+    }    catch (error) {
         console.error("Error fetching user data:", error);
        }
-    }
+    } 
  const value = {
     userData,
     setUserData,
