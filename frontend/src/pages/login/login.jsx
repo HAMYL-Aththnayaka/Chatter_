@@ -2,18 +2,35 @@ import React from "react"
 import './login.css'
 import Assets from '../../assets/assets'
 import { useState } from "react";
-const login = () => {
+import { signup , login } from "../../config/firebase";
+
+
+
+const Login = () => {
     const [currState, setCurrState] = useState("sign up");
+    const[userName,setUserName] = useState("");
+    const[email,setEmail] = useState("");
+    const[password,setPassword] = useState("");
+    
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        if (currState === "sign up") {
+            await signup(userName, email, password);
+        }else {
+            await login(email, password);
+        }
+    };
+
     return (
         <div className='login'>
             <img src={Assets.logo_big} alt='' className='logo' />
-            <form action='' className='login-form'>
+            <form onSubmit={onSubmit} className='login-form'>
                 <h2>{currState}</h2>
                 {(currState == 'sign up') ?
-                    <input type="text" placeholder='username' className="form-input" required /> : ""
+                    <input onChange={(e)=>{setUserName(e.target.value)}} value={userName} type="text" placeholder='username' className="form-input" required /> : ""
                 }
-                <input type="email" placeholder='email ' className="form-input" />
-                <input type="password" placeholder='password' className="form-input" />
+                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" placeholder='email ' className="form-input" />
+                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder='password' className="form-input" />
                 {currState == "sign up" ?
                     <button type='submit'>Sign UP</button> : <button type='submit'>Log in</button>
                 }
@@ -29,4 +46,4 @@ const login = () => {
         </div>);
 }
 
-export default login;
+export default Login;
