@@ -4,7 +4,11 @@ import { auth, db } from "../../config/firebase"
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import upload from '../../lib/upload';
 import assets from "../../assets/assets"
+import { updateDoc } from 'firebase/firestore';
+
 
 const profileUpdate = () => {
   const navigate = useNavigate();
@@ -14,6 +18,31 @@ const profileUpdate = () => {
   const [uid,setUid] = useState("");
   const [prevImage,setPrevImage] = useState("");
 
+  const profileUpdate = async(event)=>{
+    event.PreventDefault();
+    try{
+      if(!prevImage && !image){
+        toast.error("Please Upload a Profile Picture !!");
+      }
+      const docRef = doc(db, "users", uid);
+      if(image){
+        const ImgURL = await upload(image);
+        setPrevImage(ImgURL);
+        await updateDoc(docRef,{
+          avatar: ImgURL,
+          bio:bio,
+          name:name
+        });
+      }else{
+        await updateDoc(docRef,{
+          bio:bio,
+          name:name
+        });
+      }
+    }catch(error){
+      console.error(error.toString());
+    }
+  }
 
   useEffect(()=>{
     onAuthStateChanged(auth,async(user)=>{
@@ -40,7 +69,7 @@ const profileUpdate = () => {
   return (
     <div className='profile'>
         <div className='profile-container'>
-              <form>
+              <form onSubmit={profileUpdate}>
                 <h3>Profile Details</h3>
                 <label htmlFor="avatar">
                   <input onChange={(e)=>setImage(e.target.files[0])} type="file" id="avatar" accept='.png, .jpg, .jpeg' hidden/>
