@@ -9,8 +9,8 @@ import ProfileUpdate from './pages/profileUpdate/profileUpdate';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebase';
 import { useContext } from 'react';
-import { AppContext } from './context/appContext';
-
+// Remove the duplicate or mismatched casing imports
+import { AppContext } from './context/appContext'; // Use exactly what matches your file name AppContextProvider from './context/AppContext';
 
 
 const App=()=>{
